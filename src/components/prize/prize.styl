@@ -1,0 +1,63 @@
+.itemListWrapper {
+  display flex
+  justify-content center
+  align-items center
+  margin 0 18px
+  // background url('~@/assets/image/guessing/race-stage-bg.png')
+  background-size 100% 100%
+  margin-top 20px
+  padding 20px 0
+  .itemListBox {
+    width 680px
+    // border 1px solid red
+    position relative
+    .next, .prev {
+      top 80px
+      width 44px
+      height 77px
+      outline none
+    }
+    .next {
+      background url('./img/arrow_right.png') no-repeat
+      background-size 100%
+      right -70px
+    }
+    .prev {
+      background url('./img/arrow_left.png') no-repeat
+      background-size 100%
+      left -70px
+    }
+    .itemList {
+      .item {
+        text-align center
+        .imgBox {
+          width 208px
+          height @width
+          display flex
+          justify-content center
+          align-items center
+          // background #fff
+          border-radius: 10px
+          img {
+            max-width 90%
+            max-height 90%
+          }
+        }
+        .title {
+          font-size 26px
+          color #fff
+          
+          .no-wrap {
+            margin-top 15px
+            // height 64px
+            line-height 32px
+            no-wrap(2)
+          }
+          .num {
+            margin-top 8px
+          }
+        }
+      }
+    }
+  }
+}

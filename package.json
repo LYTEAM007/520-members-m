@@ -1,0 +1,51 @@
+{
+  "name": "tokyoOlympics",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vue-cli-service serve",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "test": "vue-cli-service build --mode test",
+    "lint": "vue-cli-service lint",
+    "build:dev": "vue-cli-service build --mode development",
+    "develop": "vue-cli-service build --mode development",
+    "build:prod": "vue-cli-service build --mode production"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "core-js": "^3.6.4",
+    "dev-utils-pkg": "git+ssh://git@github.com:manbetFront/dev-utils-pkg",
+    "element-ui": "^2.15.13",
+    "fastclick": "^1.0.6",
+    "jsencrypt": "^3.0.0-rc.1",
+    "postcss-px2rem": "^0.3.0",
+    "stylus": "^0.54.8",
+    "stylus-loader": "^3.0.2",
+    "swiper": "^9.1.1",
+    "vant": "^2.10.3",
+    "vconsole": "^3.3.4",
+    "vue": "^2.6.11",
+    "vue-awesome-swiper": "^3.1.3",
+    "vue-calendar-component": "^2.8.2",
+    "vue-login-tool": "^1.2.0",
+    "vue-router": "^3.1.6",
+    "vue-scroller": "^2.2.4",
+    "vue-skeleton-webpack-plugin": "^1.2.2",
+    "vuex": "3.4.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.3.0",
+    "@vue/cli-plugin-router": "~4.3.0",
+    "@vue/cli-plugin-vuex": "~4.3.0",
+    "@vue/cli-service": "~4.3.0",
+    "babel-plugin-import": "^1.13.0",
+    "compression-webpack-plugin": "^3.1.0",
+    "style-resources-loader": "^1.5.0",
+    "node-sass": "^4.14.1",
+    "postcss-plugin-px2rem": "^0.8.1",
+    "sass-loader": "^9.0.2",
+    "svg-sprite-loader": "^5.0.0",
+    "vue-template-compiler": "^2.6.11"
+  }
+}
