@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <!-- <vue-login-tool :env-type-num="2" /> -->
+    <vue-login-tool :env-type-num="2" />
     <router-view />
   </div>
 </template>
@@ -21,7 +21,6 @@ export default {
   },
   mounted() {
     this._getUsername()
-    this.$store.dispatch('getActivityTime')
   },
   methods: {
     // 初始化获取用户名
