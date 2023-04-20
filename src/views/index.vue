@@ -151,12 +151,12 @@
                 体育累计有效投注：{{ formatFigure(detail.current_ty_bet_amount) }}&nbsp;元
               </el-col>
               <el-col :span="12" class="textRight red">
-                2,880&nbsp;元
+                2,888&nbsp;元
               </el-col>
             </el-row>
             <el-row type="flex">
               <el-col :span="24">
-                <el-progress :stroke-width="14" :percentage="(detail.current_ty_bet_amount / 2880) * 100"
+                <el-progress :stroke-width="14" :percentage="(detail.current_ty_bet_amount / 2888) * 100"
                   :color="'#FCAF1E'" :define-back-color="'#FBECC2'" :show-text="false"></el-progress>
               </el-col>
             </el-row>
@@ -167,12 +167,12 @@
                 电竞累计有效投注：{{ formatFigure(detail.current_dj_bet_amount) }}&nbsp;元
               </el-col>
               <el-col :span="12" class="textRight red">
-                2,880&nbsp;元
+                2,888&nbsp;元
               </el-col>
             </el-row>
             <el-row type="flex">
               <el-col :span="24">
-                <el-progress :stroke-width="14" :percentage="(detail.current_dj_bet_amount / 2880) * 100"
+                <el-progress :stroke-width="14" :percentage="(detail.current_dj_bet_amount / 2888) * 100"
                   :color="'#FCAF1E'" :define-back-color="'#FBECC2'" :show-text="false"></el-progress>
               </el-col>
             </el-row>
@@ -183,12 +183,12 @@
                 电子累计有效投注：{{ formatFigure(detail.current_dz_bet_amount) }}&nbsp;元
               </el-col>
               <el-col :span="12" class="textRight red">
-                2,880&nbsp;元
+                2,888&nbsp;元
               </el-col>
             </el-row>
             <el-row type="flex">
               <el-col :span="24">
-                <el-progress :stroke-width="14" :percentage="(detail.current_dz_bet_amount / 2880) * 100"
+                <el-progress :stroke-width="14" :percentage="(detail.current_dz_bet_amount / 2888) * 100"
                   :color="'#FCAF1E'" :define-back-color="'#FBECC2'" :show-text="false"></el-progress>
               </el-col>
             </el-row>
@@ -763,13 +763,15 @@ export default {
       this.dialogTips = false
       this.dialogTipsMsg = ''
     },
-    formatFigure(query) {
-      if (query) {
-        return Number(query).toLocaleString()
+    formatFigure(num) {
+      var reg = /\d{1,3}(?=(\d{3})+$)/g;
+      if (num && num.toString().indexOf('.') == -1) {
+        return (num + '').replace(reg, '$&,');
       } else {
-        return 0
+        return num.toString().replace(/(\d)(?=(\d{3})+\.)/g, function ($0, $1) {
+          return $1 + ",";
+        });
       }
-
     }
   },
   watch: {
