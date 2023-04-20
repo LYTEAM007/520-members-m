@@ -383,7 +383,7 @@
           <el-col :span="12">随机彩金+1点积分</el-col>
         </el-row>
         <el-row :gutter="20" class="tableBody" v-if="activeIndex == 2">
-          <el-col :span="12">每累计有效存款2,880元</el-col>
+          <el-col :span="12">每累计有效存款2,888元</el-col>
           <el-col :span="12">随机彩金+随机积分</el-col>
         </el-row>
         <el-row :gutter="20" class="tableBody" v-if="activeIndex == 3">
