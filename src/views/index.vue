@@ -375,21 +375,21 @@
       </div>
       <div class="tableData" v-show="activeIndex == 1 || activeIndex == 2 || activeIndex == 3">
         <el-row :gutter="20" class="tableHead">
-          <el-col :span="12">活动条件</el-col>
-          <el-col :span="12">活动奖励</el-col>
-        </el-row>
-        <el-row :gutter="20" class="tableBody" v-if="activeIndex == 1">
-          <el-col :span="12">每累计有效存款1,520元</el-col>
-          <el-col :span="12">随机彩金+1点积分</el-col>
-        </el-row>
-        <el-row :gutter="20" class="tableBody" v-if="activeIndex == 2">
-          <el-col :span="12">每累计有效存款2,888元</el-col>
-          <el-col :span="12">随机彩金+随机积分</el-col>
-        </el-row>
-        <el-row :gutter="20" class="tableBody" v-if="activeIndex == 3">
-          <el-col :span="12">每累计有效存款2,088元</el-col>
-          <el-col :span="12">随机彩金+随机积分</el-col>
-        </el-row>
+            <el-col :span="12">活动条件</el-col>
+            <el-col :span="12">活动奖励</el-col>
+          </el-row>
+          <el-row :gutter="20" class="tableBody" v-if="activeIndex == 1">
+            <el-col :span="12">每累计有效存款1,520元</el-col>
+            <el-col :span="12">随机彩金+1点积分</el-col>
+          </el-row>
+          <el-row :gutter="20" class="tableBody" v-if="activeIndex == 2">
+            <el-col :span="12">每累计有效投注2,888元</el-col>
+            <el-col :span="12">随机彩金+随机积分</el-col>
+          </el-row>
+          <el-row :gutter="20" class="tableBody" v-if="activeIndex == 3">
+            <el-col :span="12">每累计有效盈利2,088元</el-col>
+            <el-col :span="12">随机彩金+随机积分</el-col>
+          </el-row>
       </div>
       <div class="tableDataRank" v-show="activeIndex == 4">
         <el-table :data="tableData" border style="width: 100%" :key="activeIndex">
@@ -490,11 +490,11 @@
             </el-table-column>
             <el-table-column prop="type" label="活动名称" align="center">
               <template slot-scope="scope">
-                <span v-show="scope.row.type == '1'">主题一抽奖</span>
-                <span v-show="scope.row.type == '2'">主题二</span>
-                <span v-show="scope.row.type == '3'">主题三</span>
-                <span v-show="scope.row.type == '4'">主题四</span>
-                <span v-show="scope.row.type == '5'">主题四排位</span>
+                <span v-show="scope.row.type == '1'">极限奔跑吧</span>
+                <span v-show="scope.row.type == '2'">竞技篮球火</span>
+                <span v-show="scope.row.type == '3'">力拔迎胜利</span>
+                <span v-show="scope.row.type == '4'">排位赛好礼</span>
+                <span v-show="scope.row.type == '5'">排位赛好礼-排位赛奖励</span>
               </template>
             </el-table-column>
             <el-table-column prop="prize" label="活动奖品内容" align="center">
@@ -516,10 +516,6 @@
         </div>
         <div class="rewardBtn" @click="handleCloseMsg">确定</div>
       </div>
-      <!-- <div class="tipsContent">
-        <div>{{ dialogTipsMsg }}</div>
-      </div>
-      <div class="rewardBtn" @click="handleCloseMsg">确定</div> -->
     </el-dialog>
   </div>
 </template>
