@@ -589,11 +589,12 @@ export default {
       rewardDetail: [],
       dialogTips: false,
       dialogTipsMsg: '',
-      rewardTipsMsg: ''
+      rewardTipsMsg: '',
+      plaseLogin:'登录即可参与ManBetX万博“520万博运动惠”专题活动！'
     }
   },
   computed: {
-    ...mapGetters(['activityTime']),
+    ...mapGetters(['username']),
   },
   created() {
     this.getList()
@@ -622,7 +623,7 @@ export default {
           }, 3000)
           this.gainWard(1, count)
         } else {
-          this.dialogTipsMsg = '冲刺次数不足！'
+          this.dialogTipsMsg = !this.username?this.plaseLogin:'冲刺次数不足！'
           this.dialogTips = true
         }
       } else if (type == 'tl') {
@@ -633,7 +634,7 @@ export default {
           }, 3000)
           this.gainWard(2, count)
         } else {
-          this.dialogTipsMsg = '投篮次数不足！'
+          this.dialogTipsMsg = !this.username?this.plaseLogin:'投篮次数不足！'
           this.dialogTips = true
         }
       } else if (type == 'bh') {
@@ -644,7 +645,7 @@ export default {
           }, 3000)
           this.gainWard(3, count)
         } else {
-          this.dialogTipsMsg = '拔河次数不足！'
+          this.dialogTipsMsg = !this.username?this.plaseLogin:'拔河次数不足！'
           this.dialogTips = true
         }
 
@@ -656,7 +657,7 @@ export default {
           }, 3000)
           this.gainWard(4, count)
         } else {
-          this.dialogTipsMsg = '抽奖次数不足！'
+          this.dialogTipsMsg = !this.username?this.plaseLogin:'抽奖次数不足！'
           this.dialogTips = true
         }
       }
@@ -737,9 +738,10 @@ export default {
         } else {
           this.recordHistoryList = res.data.list
           this.recordHistoryListTotal = res.data.total
+          this.dialogVisibleRecord = true
         }
       })
-      this.dialogVisibleRecord = true
+      
     },
     handleCurrentChange(val) {
       this.recordHistoryPage.page = val
