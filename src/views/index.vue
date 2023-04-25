@@ -587,13 +587,13 @@ export default {
               this.detail = Object.assign(res.data, {
                 skip_animei: res.data.skip_animei == '1' ? true : false
               })
-              if (!this.openSetting.theme1_is_open) {
+              if (!this.openSetting.theme1_is_open||this.openSetting.theme1_status!=2) {
                 this.detail.act1_reword_prize = 0
                 this.detail.act1_reword_point = 0
                 this.detail.act1_left_time = 0
                 this.detail.current_deposit_amount = 0
               }
-              if (!this.openSetting.theme2_is_open) {
+              if (!this.openSetting.theme2_is_open||this.openSetting.theme2_status!=2) {
                 this.detail.act2_reword_prize = 0
                 this.detail.act2_reword_point = 0
                 this.detail.act2_left_time = 0
@@ -601,14 +601,14 @@ export default {
                 this.detail.current_dj_bet_amount = 0
                 this.detail.current_dz_bet_amount = 0
               }
-              if (!this.openSetting.theme3_is_open) {
+              if (!this.openSetting.theme3_is_open||this.openSetting.theme3_status!=2) {
                 this.detail.act3_reword_prize = 0
                 this.detail.act3_reword_point = 0
                 this.detail.act3_left_time = 0
                 this.detail.current_zr_win_amount = 0
                 this.detail.current_qp_win_amount = 0
               }
-              if (!this.openSetting.theme4_is_open) {
+              if (!this.openSetting.draw_is_open||this.openSetting.draw_status!=2) {
                 this.detail.act4_reword_prize = 0
                 this.detail.act4_left_time = 0
                 this.detail.total_point = 0
