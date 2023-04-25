@@ -4,32 +4,7 @@
     <div class="main">
       <div class="activeContent">
         <div class="activeDetail">
-          <el-row type="flex" class="activeDetailItem" justify="space-around">
-            <el-col :span="8">
-              <div class="gridContentBorder item">
-                <div>【活动时间】</div>
-                <div>
-                  2023年5月20日-2023年5月27日
-                </div>
-              </div>
-            </el-col>
-            <el-col :span="8">
-              <div class="gridContentBorder item">
-                <div>【活动对象】</div>
-                <div>
-                  全体ManBetX万博会员
-                </div>
-              </div>
-            </el-col>
-            <el-col :span="8">
-              <div class="gridContentBorder item gridContentBorderLast">
-                <div>【活动平台】</div>
-                <div>
-                  全体ManBetX万博全平台（不含彩票、捕鱼、万博体育-百家乐、亚洲体育平台）
-                </div>
-              </div>
-            </el-col>
-          </el-row>
+          <img src="../assets/image/titleBanner2.png" alt="">
         </div>
       </div>
       <div class="activeTitle">
@@ -874,15 +849,19 @@ export default {
    
   }
   .activeContent{
-    padding 0 0.05rem 0.15rem
-    background #FFFFFF
-    background-image linear-gradient(180deg, #FFFFFF 0%, #FEEEC8 100%)
-    box-shadow 0px 0px 14px 0px rgba(0,0,0,0.12)
-    margin 0 0 0.2rem
     .activeDetail{
+      height 1.6rem
       text-align center
       color #343434
       font-size 12px
+      margin-bottom 0.15rem
+      img{
+        width calc(100% + 0.2rem)
+        height calc(100% + 0.2rem)
+        position relative
+        left -0.1rem
+        top -0.1rem
+      }
     }
     .gridContentBorder{
       position relative
