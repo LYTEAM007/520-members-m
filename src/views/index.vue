@@ -726,6 +726,7 @@ export default {
     },
     handleClose() {
       this.dialogVisible = false
+      this.rewardDetail=[]
       if (!this.detail.skip_animei) {
         setTimeout(() => this.elementVisibleCc = true, 300)
       } else {
