@@ -406,7 +406,7 @@
         <div class="dialogContent">
           <div class="rewardIframeTitle">恭 喜 您 获 得</div>
           <div class="rewardIframeContent">
-            <p v-for="(item, index) in rewardDetail" :key="index">{{ item.prize }}彩金<span v-show="detail.act1_reword_point!=100">+1点积分</span></p>
+            <p v-for="(item, index) in rewardDetail" :key="index">{{ item.prize }}彩金<span v-show="item.point!=0">+1点积分</span></p>
           </div>
         </div>
         <div class="dialogBtn" @click="handleClose">确定</div>
@@ -417,7 +417,7 @@
         <div class="dialogContent">
           <div class="rewardIframeTitle">恭 喜 您 获 得</div>
           <div class="rewardIframeContent">
-            <p v-for="(item, index) in rewardDetail" :key="index">{{ item.prize }}彩金<span v-show="detail.act2_reword_point!=100">+{{ item.point }}点积分</span></p>
+            <p v-for="(item, index) in rewardDetail" :key="index">{{ item.prize }}彩金<span v-show="item.point!=0">+{{ item.point }}点积分</span></p>
           </div>
         </div>
         <div class="dialogBtn" @click="handleClose">确定</div>
@@ -428,7 +428,7 @@
         <div class="dialogContent">
           <div class="rewardIframeTitle">恭 喜 您 获 得</div>
           <div class="rewardIframeContent">
-            <p v-for="(item, index) in rewardDetail" :key="index">{{ item.prize }}彩金<span v-show="detail.act3_reword_point!=100">+{{ item.point }}</span>点积分</p>
+            <p v-for="(item, index) in rewardDetail" :key="index">{{ item.prize }}彩金<span v-show="item.point!=0">+{{ item.point }}</span>点积分</p>
           </div>
         </div>
         <div class="dialogBtn" @click="handleClose">确定</div>
