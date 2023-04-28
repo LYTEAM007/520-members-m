@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <vue-login-tool :env-type-num="2" />
+    <vue-login-tool :env-type-num="2" v-if="isShowComponents" />
     <router-view />
   </div>
 </template>
@@ -14,9 +14,14 @@ import {
 export default {
   name: 'App',
   data() {
-    return {}
+    return {
+      isShowComponents: true,
+    }
   },
   created() {
+    if (process.env.VUE_APP_TITLE === 'PROD') {
+      this.isShowComponents = false
+    }
     window.setUserName = this.setUserName
   },
   mounted() {

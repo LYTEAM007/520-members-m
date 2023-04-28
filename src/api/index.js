@@ -22,3 +22,7 @@ export const recordHistory = (data) => {
 export const skipAnimei = (data) => {
   return service('post', '/api/user/skipAnimei', { ...data })
 }
+
+export const getSetting = (data) => {
+  return service('get', '/api/index/setting', { ...data })
+}

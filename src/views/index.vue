@@ -4,32 +4,7 @@
     <div class="main">
       <div class="activeContent">
         <div class="activeDetail">
-          <el-row type="flex" class="activeDetailItem" justify="space-around">
-            <el-col :span="8">
-              <div class="gridContentBorder item">
-                <div>【活动时间】</div>
-                <div>
-                  2023年5月20日-2023年5月27日
-                </div>
-              </div>
-            </el-col>
-            <el-col :span="8">
-              <div class="gridContentBorder item">
-                <div>【活动对象】</div>
-                <div>
-                  全体ManBetX万博会员
-                </div>
-              </div>
-            </el-col>
-            <el-col :span="8">
-              <div class="gridContentBorder item gridContentBorderLast">
-                <div>【活动平台】</div>
-                <div>
-                  全体ManBetX万博全平台（不含彩票、捕鱼、万博体育-百家乐、亚洲体育平台）
-                </div>
-              </div>
-            </el-col>
-          </el-row>
+          <img src="../assets/image/titleBanner2.png" alt="">
         </div>
       </div>
       <div class="activeTitle">
@@ -151,12 +126,12 @@
                 体育累计有效投注：{{ formatFigure(detail.current_ty_bet_amount) }}&nbsp;元
               </el-col>
               <el-col :span="12" class="textRight red">
-                2,880&nbsp;元
+                2,888&nbsp;元
               </el-col>
             </el-row>
             <el-row type="flex">
               <el-col :span="24">
-                <el-progress :stroke-width="14" :percentage="(detail.current_ty_bet_amount / 2880) * 100"
+                <el-progress :stroke-width="14" :percentage="(detail.current_ty_bet_amount / 2888) * 100"
                   :color="'#FCAF1E'" :define-back-color="'#FBECC2'" :show-text="false"></el-progress>
               </el-col>
             </el-row>
@@ -167,12 +142,12 @@
                 电竞累计有效投注：{{ formatFigure(detail.current_dj_bet_amount) }}&nbsp;元
               </el-col>
               <el-col :span="12" class="textRight red">
-                2,880&nbsp;元
+                2,888&nbsp;元
               </el-col>
             </el-row>
             <el-row type="flex">
               <el-col :span="24">
-                <el-progress :stroke-width="14" :percentage="(detail.current_dj_bet_amount / 2880) * 100"
+                <el-progress :stroke-width="14" :percentage="(detail.current_dj_bet_amount / 2888) * 100"
                   :color="'#FCAF1E'" :define-back-color="'#FBECC2'" :show-text="false"></el-progress>
               </el-col>
             </el-row>
@@ -183,12 +158,12 @@
                 电子累计有效投注：{{ formatFigure(detail.current_dz_bet_amount) }}&nbsp;元
               </el-col>
               <el-col :span="12" class="textRight red">
-                2,880&nbsp;元
+                2,888&nbsp;元
               </el-col>
             </el-row>
             <el-row type="flex">
               <el-col :span="24">
-                <el-progress :stroke-width="14" :percentage="(detail.current_dz_bet_amount / 2880) * 100"
+                <el-progress :stroke-width="14" :percentage="(detail.current_dz_bet_amount / 2888) * 100"
                   :color="'#FCAF1E'" :define-back-color="'#FBECC2'" :show-text="false"></el-progress>
               </el-col>
             </el-row>
@@ -337,7 +312,7 @@
           <el-row type="flex" align="middle" class="marginBottom20">
             <el-col :span="12" class="textCenter">
               <div
-                :class="{ 'btn': detail.total_point >= 50, 'btnGray': detail.total_point < 50 || detail.act4_reword_prize }"
+                :class="{ 'btn': detail.total_point >= 50, 'btnGray': detail.total_point < 50 || detail.act4_reword_prize!=0 }"
                 @click="getRankReward">领取排位赛奖励</div>
             </el-col>
             <el-col :span="12" class="textCenter">
@@ -383,11 +358,11 @@
           <el-col :span="12">随机彩金+1点积分</el-col>
         </el-row>
         <el-row :gutter="20" class="tableBody" v-if="activeIndex == 2">
-          <el-col :span="12">每累计有效存款2,880元</el-col>
+          <el-col :span="12">每累计有效投注2,888元</el-col>
           <el-col :span="12">随机彩金+随机积分</el-col>
         </el-row>
         <el-row :gutter="20" class="tableBody" v-if="activeIndex == 3">
-          <el-col :span="12">每累计有效存款2,088元</el-col>
+          <el-col :span="12">每累计有效盈利2,088元</el-col>
           <el-col :span="12">随机彩金+随机积分</el-col>
         </el-row>
       </div>
@@ -431,7 +406,7 @@
         <div class="dialogContent">
           <div class="rewardIframeTitle">恭 喜 您 获 得</div>
           <div class="rewardIframeContent">
-            <p v-for="(item, index) in rewardDetail" :key="index">{{ item.prize }}彩金+1点积分</p>
+            <p v-for="(item, index) in rewardDetail" :key="index">{{ item.prize }}彩金<span v-show="item.point!=0">+1点积分</span></p>
           </div>
         </div>
         <div class="dialogBtn" @click="handleClose">确定</div>
@@ -442,7 +417,7 @@
         <div class="dialogContent">
           <div class="rewardIframeTitle">恭 喜 您 获 得</div>
           <div class="rewardIframeContent">
-            <p v-for="(item, index) in rewardDetail" :key="index">{{ item.prize }}彩金+{{ item.point }}点积分</p>
+            <p v-for="(item, index) in rewardDetail" :key="index">{{ item.prize }}彩金<span v-show="item.point!=0">+{{ item.point }}点积分</span></p>
           </div>
         </div>
         <div class="dialogBtn" @click="handleClose">确定</div>
@@ -453,7 +428,7 @@
         <div class="dialogContent">
           <div class="rewardIframeTitle">恭 喜 您 获 得</div>
           <div class="rewardIframeContent">
-            <p v-for="(item, index) in rewardDetail" :key="index">{{ item.prize }}彩金+{{ item.point }}点积分</p>
+            <p v-for="(item, index) in rewardDetail" :key="index">{{ item.prize }}彩金<span v-show="item.point!=0">+{{ item.point }}</span>点积分</p>
           </div>
         </div>
         <div class="dialogBtn" @click="handleClose">确定</div>
@@ -490,11 +465,11 @@
             </el-table-column>
             <el-table-column prop="type" label="活动名称" align="center">
               <template slot-scope="scope">
-                <span v-show="scope.row.type == '1'">主题一抽奖</span>
-                <span v-show="scope.row.type == '2'">主题二</span>
-                <span v-show="scope.row.type == '3'">主题三</span>
-                <span v-show="scope.row.type == '4'">主题四</span>
-                <span v-show="scope.row.type == '5'">主题四排位</span>
+                <span v-show="scope.row.type == '1'">极限奔跑吧</span>
+                <span v-show="scope.row.type == '2'">竞技篮球火</span>
+                <span v-show="scope.row.type == '3'">力拔迎胜利</span>
+                <span v-show="scope.row.type == '4'">排位赛好礼</span>
+                <span v-show="scope.row.type == '5'">排位赛好礼-排位赛奖励</span>
               </template>
             </el-table-column>
             <el-table-column prop="prize" label="活动奖品内容" align="center">
@@ -516,16 +491,12 @@
         </div>
         <div class="rewardBtn" @click="handleCloseMsg">确定</div>
       </div>
-      <!-- <div class="tipsContent">
-        <div>{{ dialogTipsMsg }}</div>
-      </div>
-      <div class="rewardBtn" @click="handleCloseMsg">确定</div> -->
     </el-dialog>
   </div>
 </template>
 <script>
 import { mapGetters } from 'vuex'
-import { getActivityIndex, getPrize, recordHistory, getPrizeThird, skipAnimei } from '@/api'
+import { getActivityIndex, getPrize, recordHistory, getPrizeThird, skipAnimei, getSetting } from '@/api'
 export default {
   data() {
     return {
@@ -589,28 +560,80 @@ export default {
       rewardDetail: [],
       dialogTips: false,
       dialogTipsMsg: '',
-      rewardTipsMsg: ''
+      rewardTipsMsg: '',
+      plaseLogin: '登录即可参与ManBetX万博“520万博运动惠”专题活动！',
+      openSetting: {},
     }
   },
   computed: {
-    ...mapGetters(['activityTime']),
+    ...mapGetters(['username']),
   },
   created() {
     this.getList()
   },
   methods: {
     getList() {
-      getActivityIndex().then((res) => {
-        if (res.code != 200) {
-          this.dialogTipsMsg = res.message
-          this.dialogTips = true
-        } else {
-          this.detail = Object.assign(res.data, {
-            skip_animei: res.data.skip_animei == '1' ? true : false
+      if (!this.username) {
+        this.dialogTipsMsg = this.plaseLogin
+        this.dialogTips = true
+      } else {
+        getSetting().then((res) => {
+          this.openSetting = res.data
+          getActivityIndex().then((res) => {
+            if (res.code != 200) {
+              this.dialogTipsMsg = res.message
+              this.dialogTips = true
+            } else {
+              this.detail = Object.assign(res.data, {
+                skip_animei: res.data.skip_animei == '1' ? true : false
+              })
+              if (!this.openSetting.theme1_is_open||this.openSetting.theme1_status!=2) {
+                this.detail.act1_reword_prize = 0
+                this.detail.act1_reword_point = 0
+                this.detail.act1_left_time = 0
+                this.detail.current_deposit_amount = 0
+              }
+              if (!this.openSetting.theme2_is_open||this.openSetting.theme2_status!=2) {
+                this.detail.act2_reword_prize = 0
+                this.detail.act2_reword_point = 0
+                this.detail.act2_left_time = 0
+                this.detail.current_ty_bet_amount = 0
+                this.detail.current_dj_bet_amount = 0
+                this.detail.current_dz_bet_amount = 0
+              }
+              if (!this.openSetting.theme3_is_open||this.openSetting.theme3_status!=2) {
+                this.detail.act3_reword_prize = 0
+                this.detail.act3_reword_point = 0
+                this.detail.act3_left_time = 0
+                this.detail.current_zr_win_amount = 0
+                this.detail.current_qp_win_amount = 0
+              }
+              if (!this.openSetting.draw_is_open||this.openSetting.draw_status!=2) {
+                this.detail.act4_reword_prize = 0
+                this.detail.act4_left_time = 0
+                this.detail.total_point = 0
+              }
+              this.elementVisibleCc = !this.detail.skip_animei
+            }
           })
-          this.elementVisibleCc = !this.detail.skip_animei
+        })
+      }
+    },
+    returnMsg(type, status, msg) {
+      if (!this.username) {
+        return this.plaseLogin
+      }
+      if (!this.openSetting[type]) {
+        return '活动暂未开启，请耐心等待!'
+      } else {
+        if (this.openSetting[status] == 1) {
+          return '活动暂未开启，请耐心等待!'
+        } else if (this.openSetting[status] == 2) {
+          return msg
+        } else if (this.openSetting[status] == 3) {
+          return '活动已结束'
         }
-      })
+      }
     },
     // 抽奖弹框
     showActivity(type, count) {
@@ -622,7 +645,7 @@ export default {
           }, 3000)
           this.gainWard(1, count)
         } else {
-          this.dialogTipsMsg = '冲刺次数不足！'
+          this.dialogTipsMsg = this.returnMsg('theme1_is_open', 'theme1_status', '冲刺次数不足！')
           this.dialogTips = true
         }
       } else if (type == 'tl') {
@@ -633,7 +656,7 @@ export default {
           }, 3000)
           this.gainWard(2, count)
         } else {
-          this.dialogTipsMsg = '投篮次数不足！'
+          this.dialogTipsMsg = this.returnMsg('theme2_is_open', 'theme2_status', '投篮次数不足！')
           this.dialogTips = true
         }
       } else if (type == 'bh') {
@@ -644,7 +667,7 @@ export default {
           }, 3000)
           this.gainWard(3, count)
         } else {
-          this.dialogTipsMsg = '拔河次数不足！'
+          this.dialogTipsMsg = this.returnMsg('theme3_is_open', 'theme3_status', '拔河次数不足！')
           this.dialogTips = true
         }
 
@@ -656,7 +679,7 @@ export default {
           }, 3000)
           this.gainWard(4, count)
         } else {
-          this.dialogTipsMsg = '抽奖次数不足！'
+          this.dialogTipsMsg = this.returnMsg('draw_is_open', 'draw_status', '抽奖次数不足！')
           this.dialogTips = true
         }
       }
@@ -664,11 +687,10 @@ export default {
     getRankReward() {
       getPrize({
         act: 5,
-        times: 1,
-        test: 1
+        times: 1
       }).then((res) => {
         if (res.code != 200) {
-          this.dialogTipsMsg = res.message
+          this.dialogTipsMsg = this.returnMsg('theme5_is_open', 'theme5_status', res.message)
           this.dialogTips = true
         } else {
           this.dialogTipsMsg = '获得彩金：' + res.data[0].prize + '元'
@@ -681,8 +703,7 @@ export default {
       if (act != 4) {
         getPrize({
           act: act,
-          times: count,
-          test: 1
+          times: count
         }).then((res) => {
           if (res.code != 200) {
             this.rewardTipsMsg = res.message
@@ -693,8 +714,7 @@ export default {
       } else {
         getPrizeThird({
           act: act,
-          times: count,
-          test: 1
+          times: count
         }).then((res) => {
           if (res.code != 200) {
             this.rewardTipsMsg = res.message
@@ -706,6 +726,7 @@ export default {
     },
     handleClose() {
       this.dialogVisible = false
+      this.rewardDetail=[]
       if (!this.detail.skip_animei) {
         setTimeout(() => this.elementVisibleCc = true, 300)
       } else {
@@ -737,9 +758,10 @@ export default {
         } else {
           this.recordHistoryList = res.data.list
           this.recordHistoryListTotal = res.data.total
+          this.dialogVisibleRecord = true
         }
       })
-      this.dialogVisibleRecord = true
+
     },
     handleCurrentChange(val) {
       this.recordHistoryPage.page = val
@@ -763,13 +785,15 @@ export default {
       this.dialogTips = false
       this.dialogTipsMsg = ''
     },
-    formatFigure(query) {
-      if (query) {
-        return Number(query).toLocaleString()
+    formatFigure(num) {
+      var reg = /\d{1,3}(?=(\d{3})+$)/g;
+      if (num && num.toString().indexOf('.') == -1) {
+        return (num + '').replace(reg, '$&,');
       } else {
-        return 0
+        return num.toString().replace(/(\d)(?=(\d{3})+\.)/g, function ($0, $1) {
+          return $1 + ",";
+        });
       }
-
     }
   },
   watch: {
@@ -823,15 +847,19 @@ export default {
 
   }
   .activeContent{
-    padding 0 0.05rem 0.15rem
-    background #FFFFFF
-    background-image linear-gradient(180deg, #FFFFFF 0%, #FEEEC8 100%)
-    box-shadow 0px 0px 14px 0px rgba(0,0,0,0.12)
-    margin 0 0 0.2rem
     .activeDetail{
+      height 1.6rem
       text-align center
       color #343434
       font-size 12px
+      margin-bottom 0.15rem
+      img{
+        width calc(100% + 0.2rem)
+        height calc(100% + 0.2rem)
+        position relative
+        left -0.1rem
+        top -0.1rem
+      }
     }
     .gridContentBorder{
       position relative
