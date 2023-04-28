@@ -820,7 +820,7 @@ export default {
       position relative
       z-index 999
     }
-   
+
   }
   .activeContent{
     padding 0 0.05rem 0.15rem
@@ -839,7 +839,7 @@ export default {
     .gridContentBorder::after{
       content ''
       display inline-block
-      width 0.01rem 
+      width 0.01rem
       height 0.7rem
       position absolute
       top 0px
@@ -849,7 +849,7 @@ export default {
     .gridContentBorderLast:after{
       content ''
       display inline-block
-      width 0.01rem 
+      width 0.01rem
       height 0px
     }
     item >div{
@@ -893,9 +893,9 @@ export default {
     }
     .activeThemeIcon{
       position absolute
-      height .9rem
+      height 0.6rem
       left 0rem
-      top 0rem
+      top 0.15rem
     }
     .activeThemeArrow{
       width 0.3rem
@@ -907,7 +907,7 @@ export default {
       color white
       background-image linear-gradient(180deg, #FF942E 0%, rgba(252,181,27,0.00) 100%)
     }
-    
+
   }
   .activeThemeContent{
     border-radius 15px
@@ -1006,7 +1006,7 @@ export default {
       font-size 22px
       color #333333
       font-weight bold
-      margin-bottom 0.1rem 
+      margin-bottom 0.1rem
     }
     .tipsItem{
       margin 0.05rem 0
@@ -1022,7 +1022,7 @@ export default {
       font-weight 400
     }
   }
-  
+
 
   .activeSectionIconCc{
     height 4.4rem
@@ -1071,7 +1071,7 @@ export default {
     top -0.05rem
     right 0
   }
-  
+
 
   .frames{
     weight calc(50% - 0.1rem)!important
@@ -1104,7 +1104,7 @@ export default {
     text-align center
     font-family MicrosoftYaHei
     font-size 18px
-    color #FF942E 
+    color #FF942E
     cursor pointer
     border-radius 8px
   }
@@ -1174,7 +1174,7 @@ export default {
       transform skewX(25deg)
     }
   }
- 
+
   .progressText{
     margin-bottom 0.08rem
     font-size 18px
@@ -1248,7 +1248,7 @@ export default {
   height 100%
 }
 .rewardIframe >>>.el-dialog__header{
-  display none 
+  display none
 }
 .rewardIframe img{
   position absolute
@@ -1319,7 +1319,7 @@ export default {
 }
 .recordContent{
   z-index 1
- 
+
 }
 
 .rewardRecord img{
@@ -1341,7 +1341,7 @@ export default {
   position relative
   right -0.1rem
   top -0.2rem
-  z-index 3 
+  z-index 3
 }
 .rewardRecord >>> .el-table__header{
   border-radius 8px
@@ -1421,8 +1421,8 @@ export default {
   text-align center
   border-radius 8px
   font-size 16px
-  .rewardContent{ 
-    background #FFF3E7 
+  .rewardContent{
+    background #FFF3E7
     border-radius 8px
     padding  20px
     margin 15px 0
