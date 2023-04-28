@@ -655,7 +655,7 @@
         </div>
         <div class="marginTop20">
           本优惠遵循ManBetX万博
-          <span class="tipsItemColor">【一般优惠规则与条款】</span>。
+          <span class="tipsItemColor" @click="open">【一般优惠规则与条款】</span>。
         </div>
       </div>
     </div>
@@ -1200,6 +1200,10 @@ export default {
         });
       }
     },
+
+    open() {
+      window.open('https://jc.8manbet.net/mobile/#/?activityId=undefined')
+    }
   },
   watch: {},
 };
