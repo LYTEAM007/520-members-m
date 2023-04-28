@@ -165,14 +165,19 @@
               <el-col :span="12" class="frames marginRight20">
                 可冲刺次数：<span class="figure">{{
                   formatFigure(detail.act1_left_time)
-                }}</span
-                >&nbsp;次
+                }}
+                </span
+                >
+
+                 <span class="fw">  次</span>
               </el-col>
               <el-col :span="12" class="frames textCenter">
                 已获得的积分：<span class="figure">{{
                   detail.act1_reword_point
                 }}</span
-                >&nbsp;/100&nbsp;次
+                >
+                 <span class="fw"> /100 次</span>
+
               </el-col>
             </el-row>
             <el-row type="flex" justify="space-around" class="marginBottom30">
@@ -426,16 +431,18 @@
           </div>
           <el-row type="flex" class="marginBottom30">
             <el-col :span="10" class="frames marginRight20">
-              可拔河次数：<span class="figure">{{
-                formatFigure(detail.act3_left_time)
-              }}</span
-              >&nbsp;次
+              可拔河次数：<span class="figure"
+                >{{ formatFigure(detail.act3_left_time) }}
+              </span>
+
+              <span class="fw"> 次</span>
             </el-col>
             <el-col :span="14" class="frames">
-              已获得的积分：<span class="figure">{{
-                detail.act3_reword_point
-              }}</span
-              >&nbsp;/100&nbsp;次
+              已获得的积分：<span class="figure"
+                >{{ detail.act3_reword_point }}
+              </span>
+
+              <span class="fw"> /100次 </span>
             </el-col>
           </el-row>
           <el-row type="flex" justify="space-around" class="marginBottom30">
@@ -512,7 +519,7 @@
             </el-col>
           </el-row>
           <el-row type="flex" align="middle" class="marginBottom20">
-             <el-col :span="12" class="textCenter">
+            <el-col :span="12" class="textCenter">
               <img
                 src="../assets/image/award.png"
                 alt=""
@@ -552,7 +559,6 @@
                 alt=""
               />
             </el-col>
-
           </el-row>
           <el-row type="flex" align="middle" class="marginBottom20">
             <el-col :span="12" class="textCenter">
@@ -655,7 +661,8 @@
         </div>
         <div class="marginTop20">
           本优惠遵循ManBetX万博
-          <span class="tipsItemColor" @click="open">【一般优惠规则与条款】</span>。
+          <span class="tipsItemColor" @click="open">【一般优惠规则与条款】</span
+          >。
         </div>
       </div>
     </div>
@@ -1202,8 +1209,8 @@ export default {
     },
 
     open() {
-      window.open('https://jc.8manbet.net/mobile/#/?activityId=undefined')
-    }
+      window.open("https://jc.8manbet.net/mobile/#/?activityId=undefined");
+    },
   },
   watch: {},
 };
@@ -1641,7 +1648,6 @@ export default {
     line-height: 0.5rem;
     cursor: pointer;
     background-image: linear-gradient(180deg, #CECECE 0%, #EAE7E7 100%);
-    box-shadow: 0px 2px 4px 0px rgba(255, 194, 52, 0.5);
     font-size: 20px;
     color: #333;
     text-align: left;
@@ -1992,5 +1998,10 @@ export default {
   line-height: 0.36rem;
   font-weight: 400;
   padding: 0 0.2rem;
+}
+
+.fw {
+  color: #333;
+  font-weight: 700;
 }
 </style>
