@@ -4,7 +4,7 @@
     <div class="main">
       <div class="activeContent">
         <div class="activeDetail">
-          <img src="../assets/image/titleBanner2.png" alt="" />
+          <img src="../assets/image/titleBanner.png" alt="" />
         </div>
       </div>
       <div class="activeTitle">
@@ -1219,7 +1219,7 @@ export default {
 <style lang="stylus" scoped>
 .index {
   min-height: 100vh;
-  background: url('../assets/image/bg.png') no-repeat;
+  background: url('../assets/image/bg.jpg') no-repeat;
   background-size: 100% auto;
   clearfix();
   font-family: MicrosoftYaHei;
