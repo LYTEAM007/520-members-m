@@ -135,7 +135,7 @@
             <el-col :span="14" class="btn noCursor marginRight20">
               已获得彩金：{{ formatFigure(detail.act1_reword_prize) }}&nbsp;元
             </el-col>
-            <el-col :span="10" class="recordBtn">
+            <el-col :span="10" class="recordBtn" :class="{username: 'record-active'}">
               <div @click="showRewardRecord('1')">中奖记录</div>
             </el-col>
           </el-row>
@@ -163,21 +163,17 @@
           <div>
             <el-row type="flex" class="marginBottom30">
               <el-col :span="12" class="frames marginRight20">
-                可冲刺次数：<span class="figure">{{
-                  formatFigure(detail.act1_left_time)
-                }}
-                </span
-                >
+                可冲刺次数：<span class="figure"
+                  >{{ formatFigure(detail.act1_left_time) }}
+                </span>
 
-                 <span class="fw">  次</span>
+                <span class="fw"> 次</span>
               </el-col>
               <el-col :span="12" class="frames textCenter">
                 已获得的积分：<span class="figure">{{
                   detail.act1_reword_point
-                }}</span
-                >
-                 <span class="fw"> /100 次</span>
-
+                }}</span>
+                <span class="fw"> /100 次</span>
               </el-col>
             </el-row>
             <el-row type="flex" justify="space-around" class="marginBottom30">
@@ -245,7 +241,7 @@
             <el-col :span="14" class="btn noCursor marginRight20">
               已获得彩金：{{ formatFigure(detail.act2_reword_prize) }}&nbsp;元
             </el-col>
-            <el-col :span="10" class="recordBtn">
+            <el-col :span="10" class="recordBtn" :class="{username: 'record-active'}">
               <div @click="showRewardRecord('2')">中奖记录</div>
             </el-col>
           </el-row>
@@ -383,7 +379,7 @@
             <el-col :span="14" class="btn noCursor marginRight20">
               已获得彩金：{{ formatFigure(detail.act3_reword_prize) }}&nbsp;元
             </el-col>
-            <el-col :span="10" class="recordBtn">
+            <el-col :span="10" class="recordBtn" :class="{username: 'record-active'}">
               <div @click="showRewardRecord('3')">中奖记录</div>
             </el-col>
           </el-row>
@@ -486,7 +482,7 @@
             align="middle"
           >
             <el-col :span="12">
-              <div class="recordBtn" @click="showRewardRecord('4')">
+              <div class="recordBtn" :class="{username: 'record-active'}" @click="showRewardRecord('4')">
                 中奖记录
               </div>
             </el-col>
@@ -1582,13 +1578,19 @@ export default {
     padding: 0 0.2rem;
     height: 0.5rem;
     line-height: 50px;
-    border: 1px solid orange;
     text-align: center;
-    font-family: MicrosoftYaHei;
-    font-size: 18px;
-    color: #FF942E;
-    cursor: pointer;
     border-radius: 8px;
+    font-family: MicrosoftYaHei;
+    font-size: 14px;
+    color: #333333;
+    background-image: linear-gradient(180deg, #CECECE 0%, #EAE7E7 100%);
+  }
+  .record-active {
+    background: #D8D8D8;
+    background-image: linear-gradient(270deg, #FCB51B 2%, #FF942E 97%);
+    box-shadow: 0px 2px 6px 0px rgba(255,194,52,0.5);
+    color: #fff;
+
   }
 
   .btn {
@@ -1632,8 +1634,9 @@ export default {
     height: 0.5rem;
     line-height: 0.5rem;
     cursor: pointer;
+    background: #D8D8D8;
     background-image: linear-gradient(270deg, #FCB51B 2%, #FF942E 97%);
-    box-shadow: 0px 2px 4px 0px rgba(255, 194, 52, 0.5);
+    box-shadow: 0px 2px 6px 0px rgba(255, 194, 52, 0.5);
     font-size: 20px;
     color: #FFFFFF;
     text-align: left;
@@ -1688,6 +1691,9 @@ export default {
 
   .marginTop20 {
     margin-top: 0.2rem !important;
+    font-family: MicrosoftYaHei;
+    font-size: 24px;
+    color: #333333;
   }
 
   .marginTop40 {
