@@ -1479,7 +1479,7 @@ export default {
 
     .tipsItem {
       margin: 0.05rem 0;
-      font-size: 18px;
+      font-size: 24px;
       color: #333333;
       line-height: 0.27rem;
       font-weight: 400;
@@ -1487,7 +1487,7 @@ export default {
 
     .tipsItemColor {
       font-family: MicrosoftYaHei;
-      font-size: 18px;
+      font-size: 24px;
       color: #FD4E06;
       font-weight: 400;
     }
