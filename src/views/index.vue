@@ -799,7 +799,7 @@
         <div class="recordTitle">中奖记录</div>
         <div class="recordTable">
           <el-table :data="recordHistoryList" style="width: 100%">
-            <el-table-column prop="created_at" label="时间" align="center">
+            <el-table-column prop="created_at" label="时间" align="center" width="110">
             </el-table-column>
             <el-table-column prop="type" label="活动名称" align="center">
               <template slot-scope="scope">
@@ -934,8 +934,8 @@ export default {
   methods: {
     getList() {
       if (!this.username) {
-        this.dialogTipsMsg = this.plaseLogin;
-        this.dialogTips = true;
+        // this.dialogTipsMsg = this.plaseLogin;
+        // this.dialogTips = true;
       } else {
         getSetting().then((res) => {
           this.openSetting = res.data;
@@ -1179,7 +1179,7 @@ export default {
       this.dialogVisibleRecord = false;
       this.recordHistoryPage = {
         page: 1,
-        size: 10,
+        size: 5,
       };
     },
     changaTabs(tabsIndex, type) {
@@ -2010,4 +2010,6 @@ export default {
   color: #333;
   font-weight: 700;
 }
+
+
 </style>
