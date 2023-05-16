@@ -885,7 +885,7 @@ export default {
       recordHistoryListTotal: 0,
       recordHistoryPage: {
         page: 1,
-        size: 5,
+        size: 10,
       },
       activeIndex: "1",
       dialogVisible: false,
@@ -1179,7 +1179,7 @@ export default {
       this.dialogVisibleRecord = false;
       this.recordHistoryPage = {
         page: 1,
-        size: 5,
+        size: ,
       };
     },
     changaTabs(tabsIndex, type) {
