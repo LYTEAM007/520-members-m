@@ -1179,7 +1179,7 @@ export default {
       this.dialogVisibleRecord = false;
       this.recordHistoryPage = {
         page: 1,
-        size: ,
+        size: 10,
       };
     },
     changaTabs(tabsIndex, type) {
