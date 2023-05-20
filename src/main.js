@@ -1,4 +1,6 @@
 /* eslint-disable new-cap */
+
+console.log("main")
 import Vue from 'vue'
 import { getUrlParams } from '@/common/js/util.js'
 import router from './router'
