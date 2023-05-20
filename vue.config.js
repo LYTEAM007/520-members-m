@@ -61,7 +61,7 @@ module.exports = {
 
     config.optimization.minimizer('terser').tap((args) => {
       // 去除生产环境console
-      args[0].terserOptions.compress.drop_console = true
+      args[0].terserOptions.compress.drop_console = false
       return args
     })
 
