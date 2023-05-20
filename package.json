@@ -20,8 +20,7 @@
     "fastclick": "^1.0.6",
     "jsencrypt": "^3.0.0-rc.1",
     "postcss-px2rem": "^0.3.0",
-    "stylus": "^0.54.8",
-    "stylus-loader": "^3.0.2",
+  
     "swiper": "^9.1.1",
     "vant": "^2.10.3",
     "vconsole": "^3.3.4",
