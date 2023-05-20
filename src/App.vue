@@ -77,12 +77,16 @@ export default {
     },
     //兼容老版ios端 获取用户名
     getIOSUsername() {
+    console.log("getIos")
       const timer = setInterval(() => {
+      console.log(window.webkit,"1")
+      console.log(window.webkit.messageHandlers,"2")
         if (window.webkit && window.webkit.messageHandlers) {
           try {
             window.webkit.messageHandlers.getUserName.postMessage('userName')
             clearInterval(timer)
           } catch (e) {
+            console.log(e)
           }
         }
       }, 1000)
