@@ -30,6 +30,7 @@ export default new Vue({
   store,
   created() {
     const username = getUrlParams().username
+    console.log(username)
     if (username) {
       sessionStorage.setItem('username', username)
       store.commit('SET_USERNAME', username)

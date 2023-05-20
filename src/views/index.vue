@@ -928,7 +928,8 @@ export default {
   computed: {
     ...mapGetters(["username"]),
   },
-  created() {
+  mounted() {
+    console.log(1)
     this.getList();
   },
   methods: {
