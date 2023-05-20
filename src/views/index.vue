@@ -135,7 +135,11 @@
             <el-col :span="14" class="btn noCursor marginRight20">
               已获得彩金：{{ formatFigure(detail.act1_reword_prize) }}&nbsp;元
             </el-col>
-            <el-col :span="10" class="recordBtn" :class="{username: 'record-active'}">
+            <el-col
+              :span="10"
+              class="recordBtn"
+              :class="{ username: 'record-active' }"
+            >
               <div @click="showRewardRecord('1')">中奖记录</div>
             </el-col>
           </el-row>
@@ -241,7 +245,11 @@
             <el-col :span="14" class="btn noCursor marginRight20">
               已获得彩金：{{ formatFigure(detail.act2_reword_prize) }}&nbsp;元
             </el-col>
-            <el-col :span="10" class="recordBtn" :class="{username: 'record-active'}">
+            <el-col
+              :span="10"
+              class="recordBtn"
+              :class="{ username: 'record-active' }"
+            >
               <div @click="showRewardRecord('2')">中奖记录</div>
             </el-col>
           </el-row>
@@ -379,7 +387,11 @@
             <el-col :span="14" class="btn noCursor marginRight20">
               已获得彩金：{{ formatFigure(detail.act3_reword_prize) }}&nbsp;元
             </el-col>
-            <el-col :span="10" class="recordBtn" :class="{username: 'record-active'}">
+            <el-col
+              :span="10"
+              class="recordBtn"
+              :class="{ username: 'record-active' }"
+            >
               <div @click="showRewardRecord('3')">中奖记录</div>
             </el-col>
           </el-row>
@@ -482,7 +494,11 @@
             align="middle"
           >
             <el-col :span="12">
-              <div class="recordBtn" :class="{username: 'record-active'}" @click="showRewardRecord('4')">
+              <div
+                class="recordBtn"
+                :class="{ username: 'record-active' }"
+                @click="showRewardRecord('4')"
+              >
                 中奖记录
               </div>
             </el-col>
@@ -799,7 +815,12 @@
         <div class="recordTitle">中奖记录</div>
         <div class="recordTable">
           <el-table :data="recordHistoryList" style="width: 100%">
-            <el-table-column prop="created_at" label="时间" align="center" width="110">
+            <el-table-column
+              prop="created_at"
+              label="时间"
+              align="center"
+              width="110"
+            >
             </el-table-column>
             <el-table-column prop="type" label="活动名称" align="center">
               <template slot-scope="scope">
@@ -929,7 +950,7 @@ export default {
     ...mapGetters(["username"]),
   },
   mounted() {
-    console.log(1)
+    console.log(1);
     this.getList();
   },
   methods: {
@@ -1213,13 +1234,22 @@ export default {
 };
 </script>
 
-<style lang="stylus" scoped>
+<style lang="scss" scoped>
 .index {
   min-height: 100vh;
-  background: url('../assets/image/bg.jpg') no-repeat;
+  background: url("../assets/image/bg.jpg") no-repeat;
   background-size: 100% auto;
-  clearfix();
+  // clearfix();
   font-family: MicrosoftYaHei;
+
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
 }
 
 .main {
@@ -1242,7 +1272,7 @@ export default {
     .bgTitle {
       font-family: PingFangSC-Medium;
       font-size: 32px;
-      color: #FFFFFF;
+      color: #ffffff;
       text-align: center;
       font-weight: 500;
       position: relative;
@@ -1252,7 +1282,7 @@ export default {
     .bgText {
       font-family: FZZDHJW--GB1-0;
       font-size: 24px;
-      color: #FFFFFF;
+      color: #ffffff;
       text-align: center;
       line-height: 0.36rem;
       font-weight: bold;
@@ -1284,24 +1314,29 @@ export default {
     }
 
     .gridContentBorder::after {
-      content: '';
+      content: "";
       display: inline-block;
       width: 0.01rem;
       height: 0.7rem;
       position: absolute;
       top: 0px;
       right: 0px;
-      background-image: linear-gradient(bottom, #fff -100%, orange 50%, #fff 100%);
+      background-image: linear-gradient(
+        bottom,
+        #fff -100%,
+        orange 50%,
+        #fff 100%
+      );
     }
 
     .gridContentBorderLast:after {
-      content: '';
+      content: "";
       display: inline-block;
       width: 0.01rem;
       height: 0px;
     }
 
-    item >div {
+    item > div {
       height: 0.36rem;
       line-height: 0.36rem;
       font-size: 14px;
@@ -1328,7 +1363,7 @@ export default {
     border-radius: 8px;
     border: 1px solid rgba(255, 203, 50, 1);
     box-shadow: 0px 0px 10px 0px rgba(86, 59, 33, 0.2);
-    background-image: linear-gradient(180deg, #FFFFFF 0%, #FEEEC8 100%);
+    background-image: linear-gradient(180deg, #ffffff 0%, #feeec8 100%);
     margin: 0.2rem 0;
 
     div {
@@ -1360,7 +1395,11 @@ export default {
 
     .activeTab {
       color: white;
-      background-image: linear-gradient(180deg, #FF942E 0%, rgba(252, 181, 27, 0) 100%);
+      background-image: linear-gradient(
+        180deg,
+        #ff942e 0%,
+        rgba(252, 181, 27, 0) 100%
+      );
     }
   }
 
@@ -1417,7 +1456,7 @@ export default {
     margin: 0rem 0 0.6rem 0;
   }
 
-  .tableHead>div {
+  .tableHead > div {
     font-family: MicrosoftYaHei-Bold;
     font-size: 22px;
     color: #333;
@@ -1425,7 +1464,7 @@ export default {
     font-weight: 700;
   }
 
-  .tableBody>div {
+  .tableBody > div {
     font-family: MicrosoftYaHei;
     font-size: 20px;
     color: #333;
@@ -1438,11 +1477,11 @@ export default {
     margin: -0.2rem 0 0.3rem 0;
   }
 
-  .tableDataRank>>>.el-table {
+  .tableDataRank >>> .el-table {
     border-radius: 8px;
   }
 
-  .tableDataRank >>>.el-table th.el-table__cell>.cell {
+  .tableDataRank >>> .el-table th.el-table__cell > .cell {
     font-family: MicrosoftYaHei-Bold;
     font-size: 22px;
     color: #333333;
@@ -1450,7 +1489,7 @@ export default {
     font-weight: 700;
   }
 
-  .tableDataRank >>>.el-table td.el-table__cell div {
+  .tableDataRank >>> .el-table td.el-table__cell div {
     font-family: MicrosoftYaHei;
     font-size: 20px;
     color: #333333;
@@ -1458,12 +1497,14 @@ export default {
     font-weight: 400;
   }
 
-  .tableDataRank>>>.el-table, .tableDataRank>>>.el-table tbody tr {
+  .tableDataRank >>> .el-table,
+  .tableDataRank >>> .el-table tbody tr {
     background: white;
   }
 
-  .tableDataRank >>>.el-table thead, .tableDataRank >>>.el-table th.el-table__cell {
-    background-image: linear-gradient(180deg, #FEF2D4 0%, #FFF9E4 100%);
+  .tableDataRank >>> .el-table thead,
+  .tableDataRank >>> .el-table th.el-table__cell {
+    background-image: linear-gradient(180deg, #fef2d4 0%, #fff9e4 100%);
   }
 
   .tips {
@@ -1489,7 +1530,7 @@ export default {
     .tipsItemColor {
       font-family: MicrosoftYaHei;
       font-size: 24px;
-      color: #FD4E06;
+      color: #fd4e06;
       font-weight: 400;
     }
   }
@@ -1527,11 +1568,11 @@ export default {
     top: 0.3rem;
     right: 0.1rem;
 
-    >>>.el-checkbox__label {
+    >>> .el-checkbox__label {
       font-size: 0.14rem;
     }
 
-    >>> .el-checkbox__input.is-checked+.el-checkbox__label {
+    >>> .el-checkbox__input.is-checked + .el-checkbox__label {
       color: orange;
     }
 
@@ -1564,7 +1605,7 @@ export default {
 
     .figure {
       font-size: 22px;
-      color: #FD4E06;
+      color: #fd4e06;
       text-align: center;
       line-height: 0.3rem;
       font-weight: 400;
@@ -1584,14 +1625,13 @@ export default {
     font-family: MicrosoftYaHei;
     font-size: 14px;
     color: #333333;
-    background-image: linear-gradient(180deg, #CECECE 0%, #EAE7E7 100%);
+    background-image: linear-gradient(180deg, #cecece 0%, #eae7e7 100%);
   }
   .record-active {
-    background: #D8D8D8;
-    background-image: linear-gradient(270deg, #FCB51B 2%, #FF942E 97%);
-    box-shadow: 0px 2px 6px 0px rgba(255,194,52,0.5);
+    background: #d8d8d8;
+    background-image: linear-gradient(270deg, #fcb51b 2%, #ff942e 97%);
+    box-shadow: 0px 2px 6px 0px rgba(255, 194, 52, 0.5);
     color: #fff;
-
   }
 
   .btn {
@@ -1601,10 +1641,10 @@ export default {
     padding: 0px 0.2rem;
     cursor: pointer;
     border-radius: 8px;
-    background-image: linear-gradient(270deg, #FCB51B 2%, #FF942E 97%);
+    background-image: linear-gradient(270deg, #fcb51b 2%, #ff942e 97%);
     box-shadow: 0px 2px 4px 0px rgba(255, 194, 52, 0.5);
     font-size: 22px;
-    color: #FFFFFF;
+    color: #ffffff;
     text-align: left;
     font-weight: 400;
   }
@@ -1618,10 +1658,10 @@ export default {
     border-radius: 8px;
     box-shadow: 0px 2px 4px 0px rgba(255, 194, 52, 0.5);
     font-size: 22px;
-    color: #FFFFFF;
+    color: #ffffff;
     text-align: center;
     font-weight: 400;
-    background-image: linear-gradient(180deg, #CECECE 0%, #EAE7E7 100%);
+    background-image: linear-gradient(180deg, #cecece 0%, #eae7e7 100%);
     color: #333333;
   }
 
@@ -1635,11 +1675,11 @@ export default {
     height: 0.5rem;
     line-height: 0.5rem;
     cursor: pointer;
-    background: #D8D8D8;
-    background-image: linear-gradient(270deg, #FCB51B 2%, #FF942E 97%);
+    background: #d8d8d8;
+    background-image: linear-gradient(270deg, #fcb51b 2%, #ff942e 97%);
     box-shadow: 0px 2px 6px 0px rgba(255, 194, 52, 0.5);
     font-size: 20px;
-    color: #FFFFFF;
+    color: #ffffff;
     text-align: left;
     font-weight: 400;
     border-radius: 8px;
@@ -1651,7 +1691,7 @@ export default {
     height: 0.5rem;
     line-height: 0.5rem;
     cursor: pointer;
-    background-image: linear-gradient(180deg, #CECECE 0%, #EAE7E7 100%);
+    background-image: linear-gradient(180deg, #cecece 0%, #eae7e7 100%);
     font-size: 20px;
     color: #333;
     text-align: left;
@@ -1668,7 +1708,7 @@ export default {
 
   .rankTips {
     font-size: 14px;
-    color: #FD4E06;
+    color: #fd4e06;
     text-align: center;
     font-weight: 400;
     margin-top: 0.1rem;
@@ -1742,18 +1782,18 @@ export default {
   }
 }
 
-.rewardIframe >>>.el-dialog {
+.rewardIframe >>> .el-dialog {
   background: transparent;
   box-shadow: none;
   position: relative;
 }
 
-.rewardIframe >>>.el-dialog__body {
+.rewardIframe >>> .el-dialog__body {
   text-align: center;
   height: 100%;
 }
 
-.rewardIframe >>>.el-dialog__header {
+.rewardIframe >>> .el-dialog__header {
   display: none;
 }
 
@@ -1788,7 +1828,7 @@ export default {
   .rewardIframeTitle {
     font-family: MicrosoftYaHei-Bold;
     font-size: 44px;
-    color: #FD4E06;
+    color: #fd4e06;
     font-weight: 700;
     margin-bottom: 0.25rem;
   }
@@ -1796,7 +1836,7 @@ export default {
   .rewardIframeContent p {
     font-family: MicrosoftYaHei;
     font-size: 0.18rem;
-    color: #FFFFFF;
+    color: #ffffff;
     font-weight: 400;
     line-height: 0.23rem;
   }
@@ -1810,14 +1850,14 @@ export default {
   line-height: 0.66rem;
   top: calc(50% + 1.55rem);
   left: calc(50% - 1.75rem);
-  background-image: linear-gradient(90deg, #FF654C 1%, #F68016 100%);
+  background-image: linear-gradient(90deg, #ff654c 1%, #f68016 100%);
   border: 1.98px solid rgba(255, 255, 255, 0.26);
   box-shadow: inset 0px 1px 3px 0px rgba(255, 255, 255, 0.93);
   box-shadow: 0px 2px 4px 0px rgba(253, 78, 6, 0.31);
   border-radius: 33.66px;
   font-family: MicrosoftYaHei;
   font-size: 22px;
-  color: #FFFFFF;
+  color: #ffffff;
   font-weight: 400;
   cursor: pointer;
 }
@@ -1826,11 +1866,13 @@ export default {
   text-align: right;
   padding-top: 10px;
 
-  >>>button:disabled, .btn-prev, .btn-next {
+  >>> button:disabled,
+  .btn-prev,
+  .btn-next {
     background: transparent !important;
   }
 
-  >>>.el-pager li {
+  >>> .el-pager li {
     background: transparent !important;
   }
 }
@@ -1844,7 +1886,7 @@ export default {
   height: 6.6rem;
 }
 
-.rewardRecord >>>.el-dialog {
+.rewardRecord >>> .el-dialog {
   box-shadow: none;
   padding: 0 0.15rem 0;
   height: 100%;
@@ -1870,14 +1912,18 @@ export default {
   height: calc(100% - 0.6rem);
   overflow-y: scroll;
   padding: 0 0.15rem 0.15rem;
-  background-image: linear-gradient(to left, #ff913c 0%, #ffc454 100%) !important;
+  background-image: linear-gradient(
+    to left,
+    #ff913c 0%,
+    #ffc454 100%
+  ) !important;
 }
 
 .recordTitle {
   text-align: center;
   font-family: MicrosoftYaHei;
   font-size: 30px;
-  color: #FFFFFF;
+  color: #ffffff;
   letter-spacing: 0;
   font-weight: 400;
   padding-top: 0.1rem;
@@ -1891,7 +1937,7 @@ export default {
   border-radius: 8px;
 }
 
-.recordTable>>>.el-table {
+.recordTable >>> .el-table {
   border-radius: 8px;
 }
 
@@ -1904,28 +1950,28 @@ export default {
 }
 
 .tipsDialog {
-  >>>.el-dialog {
+  >>> .el-dialog {
     width: 4rem;
     top: 35%;
   }
 
-  >>>.el-dialog__header {
+  >>> .el-dialog__header {
     text-align: center;
     padding: 0.2rem 0.2rem 0.1rem;
     font-szie: 0.16rem;
   }
 
-  >>>.el-dialog__header .el-dialog__title {
+  >>> .el-dialog__header .el-dialog__title {
     font-szie: 0.16rem;
   }
 
-  >>>.el-dialog__body {
+  >>> .el-dialog__body {
     padding: 0.1rem 0.2rem 0.2rem;
   }
 }
 
 .tipsContent {
-  background: #FFF3E7;
+  background: #fff3e7;
   border-radius: 8px;
   text-align: center;
   padding: 20px;
@@ -1954,7 +2000,7 @@ export default {
   font-size: 16px;
 
   .rewardContent {
-    background: #FFF3E7;
+    background: #fff3e7;
     border-radius: 8px;
     padding: 20px;
     margin: 15px 0;
@@ -1973,7 +2019,7 @@ export default {
   width: 100px;
   height: 44px;
   line-height: 44px;
-  background-image: linear-gradient(90deg, #FF654C 1%, #F68016 100%);
+  background-image: linear-gradient(90deg, #ff654c 1%, #f68016 100%);
   border: 1.98px solid rgba(255, 255, 255, 0.26);
   box-shadow: inset 0px 1px 3px 0px rgba(255, 255, 255, 0.93);
   box-shadow: 0px 2px 4px 0px rgba(253, 78, 6, 0.31);
@@ -2001,7 +2047,7 @@ export default {
 .themeDesc {
   font-family: MicrosoftYaHei;
   font-size: 18px;
-  color: #FD4E06;
+  color: #fd4e06;
   line-height: 0.36rem;
   font-weight: 400;
   padding: 0 0.2rem;
@@ -2011,6 +2057,4 @@ export default {
   color: #333;
   font-weight: 700;
 }
-
-
 </style>
