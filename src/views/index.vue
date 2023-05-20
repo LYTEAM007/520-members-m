@@ -868,6 +868,8 @@
 </template>
 <script>
 import { mapGetters } from "vuex";
+import { setEncrypt } from "common/js/util";
+
 import {
   getActivityIndex,
   getPrize,
@@ -950,10 +952,22 @@ export default {
     ...mapGetters(["username"]),
   },
   mounted() {
+    window.setUserName = this.setUserName;
     console.log(1);
     this.getList();
   },
   methods: {
+    // 暴露给全站调用的方法 获取用户名
+    setUserName(username) {
+    console.log(username,"index")
+      if (username) {
+        username = setEncrypt(username);
+        this.$store.commit("SET_USERNAME", username);
+        sessionStorage.setItem("username", username);
+        this.getList();
+      }
+    },
+
     getList() {
       if (!this.username) {
         // this.dialogTipsMsg = this.plaseLogin;
