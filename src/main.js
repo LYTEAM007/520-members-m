@@ -19,11 +19,11 @@ Vue.config.productionTip = false
 Vue.prototype.bus = new Vue()
 Vue.prototype.ERR_OK = 200
 // 加载VConsole工具
-// const loadVConsole = async () => {
-//   const vConsole = (await import('vconsole')).default
-//   new vConsole()
-// }
-// loadVConsole()
+const loadVConsole = async () => {
+  const vConsole = (await import('vconsole')).default
+  new vConsole()
+}
+loadVConsole()
 export default new Vue({
   el: '#app',
   router,
