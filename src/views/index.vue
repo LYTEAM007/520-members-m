@@ -921,20 +921,21 @@ export default {
       dialogTips: false,
       dialogTipsMsg: "",
       rewardTipsMsg: "",
-      plaseLogin: "登录即可参与ManBetX万博“520万博运动惠”专题活动！",
+      pleaseLogin: "登录即可参与ManBetX万博“520万博运动惠”专题活动！",
       openSetting: {},
     };
   },
   computed: {
     ...mapGetters(["username"]),
   },
-  created() {
+  mounted() {
+    console.log(111)
     this.getList();
   },
   methods: {
     getList() {
       if (!this.username) {
-        // this.dialogTipsMsg = this.plaseLogin;
+        // this.dialogTipsMsg = this.pleaseLogin;
         // this.dialogTips = true;
       } else {
         getSetting().then((res) => {
@@ -993,7 +994,7 @@ export default {
     },
     returnMsg(type, status, msg) {
       if (!this.username) {
-        return this.plaseLogin;
+        return this.pleaseLogin;
       }
       if (!this.openSetting[type]) {
         return "活动暂未开启，请耐心等待!";

@@ -19,6 +19,9 @@ export default {
     }
   },
   created() {
+
+    console.log(12221)
+
     if (process.env.VUE_APP_TITLE === 'PROD') {
       this.isShowComponents = false
     }
@@ -65,6 +68,7 @@ export default {
     },
     // 暴露给全站调用的方法 获取用户名
     setUserName(username) {
+      console.log(username,"----")
       if (username) {
         username = setEncrypt(username)
         this.saveUsername(username)
