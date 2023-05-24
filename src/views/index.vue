@@ -2032,7 +2032,7 @@ export default {
   }
 
   >>> .el-dialog__body {
-    padding: 0.1rem 0.2rem 0.2rem;
+    padding: 0;
   }
 }
 
@@ -2060,7 +2060,7 @@ export default {
   left: calc(50% - 2rem);
   background: white;
   color: #333;
-  padding: 0.2rem;
+  padding: 0.3rem;
   text-align: center;
   border-radius: 8px;
   font-size: 16px;
