@@ -26,3 +26,12 @@ export const skipAnimei = (data) => {
 export const getSetting = (data) => {
   return service('get', '/api/index/setting', { ...data })
 }
+
+
+
+export const getPrize100 = (data) => {
+  return service('post', '/api/user/getPrize100', { ...data })
+}
+
+
+

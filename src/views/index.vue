@@ -476,6 +476,18 @@
                 <div>拔河三次</div>
               </div>
             </el-col>
+
+            <el-col :span="7">
+              <div
+                :class="{
+                  submitBtnGray: detail.act3_left_time < 100,
+                  submitBtn: detail.act3_left_time >= 100,
+                }"
+                @click="showActivity('bh', 100)"
+              >
+                <div>拔河一百次</div>
+              </div>
+            </el-col>
           </el-row>
           <div class="themeTitle">
             会员于5月20日至5月25日，于（真人、棋牌）任意平台，每累计有效盈利2,088元即可获得一次拔河机会，完成拔河比赛可获得随机彩金及随机积分。
@@ -763,9 +775,9 @@
           <div class="rewardIframeTitle">恭 喜 您 获 得</div>
           <div class="rewardIframeContent">
             <p v-for="(item, index) in rewardDetail" :key="index">
-              {{ item.prize }}彩金<span v-show="item.point != 0"
-                >+{{ item.point }}</span
-              >点积分
+              {{ item.prize }}彩金
+              <span v-show="item.point != 0"> +{{ item.point }}点积分 </span>
+
             </p>
           </div>
         </div>
@@ -877,6 +889,7 @@ import {
   getPrizeThird,
   skipAnimei,
   getSetting,
+  getPrize100,
 } from "@/api";
 export default {
   data() {
@@ -959,7 +972,7 @@ export default {
   methods: {
     // 暴露给全站调用的方法 获取用户名
     setUserName(username) {
-    console.log(username,"index")
+      console.log(username, "index");
       if (username) {
         username = setEncrypt(username);
         this.$store.commit("SET_USERNAME", username);
@@ -1143,6 +1156,20 @@ export default {
       });
     },
     gainWard(act, count) {
+      if (count == 100) {
+        getPrize100({
+          act: act,
+          times: count,
+        }).then((res) => {
+          if (res.code != 200) {
+            this.rewardTipsMsg = res.message;
+          } else {
+            this.rewardDetail = res.data;
+          }
+        });
+        return;
+      }
+
       if (act != 4) {
         getPrize({
           act: act,
@@ -1845,6 +1872,7 @@ export default {
     color: #fd4e06;
     font-weight: 700;
     margin-bottom: 0.25rem;
+    text-align: center;
   }
 
   .rewardIframeContent p {
@@ -1853,6 +1881,7 @@ export default {
     color: #ffffff;
     font-weight: 400;
     line-height: 0.23rem;
+    text-align: center;
   }
 }
 
