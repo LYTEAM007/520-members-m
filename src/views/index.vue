@@ -1735,7 +1735,7 @@ export default {
 
   .submitBtn {
     display: inline-block;
-    padding: 0 0.4rem;
+    padding: 0 0.2rem;
     height: 0.5rem;
     line-height: 0.5rem;
     cursor: pointer;
@@ -1751,7 +1751,7 @@ export default {
 
   .submitBtnGray {
     display: inline-block;
-    padding: 0 0.4rem;
+    padding: 0 0.2rem;
     height: 0.5rem;
     line-height: 0.5rem;
     cursor: pointer;
@@ -2024,11 +2024,11 @@ export default {
   >>> .el-dialog__header {
     text-align: center;
     padding: 0.2rem 0.2rem 0.1rem;
-    font-szie: 0.16rem;
+    font-size: 0.16rem;
   }
 
   >>> .el-dialog__header .el-dialog__title {
-    font-szie: 0.16rem;
+    font-size: 0.16rem;
   }
 
   >>> .el-dialog__body {
