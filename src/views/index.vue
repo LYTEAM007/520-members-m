@@ -1632,20 +1632,20 @@ export default {
     top: 0.3rem;
     right: 0.1rem;
 
-    >>> .el-checkbox__label {
+    ::v-deep .el-checkbox__label {
       font-size: 0.14rem;
     }
 
-    >>> .el-checkbox__input.is-checked + .el-checkbox__label {
+    ::v-deep .el-checkbox__input.is-checked + .el-checkbox__label {
       color: orange;
     }
 
-    >>> .el-checkbox__input.is-checked .el-checkbox__inner {
+    ::v-deep .el-checkbox__input.is-checked .el-checkbox__inner {
       background-color: orange;
       border-color: orange;
     }
 
-    >>> .el-checkbox__input.is-focus .el-checkbox__inner {
+    ::v-deep .el-checkbox__input.is-focus .el-checkbox__inner {
       border-color: orange;
     }
   }
@@ -2016,22 +2016,22 @@ export default {
 }
 
 .tipsDialog {
-  >>> .el-dialog {
+  ::v-deep .el-dialog {
     width: 4rem;
     top: 35%;
   }
 
-  >>> .el-dialog__header {
+  ::v-deep .el-dialog__header {
     text-align: center;
     padding: 0.2rem 0.2rem 0.1rem;
     font-size: 0.16rem;
   }
 
-  >>> .el-dialog__header .el-dialog__title {
+  ::v-deep .el-dialog__header .el-dialog__title {
     font-size: 0.16rem;
   }
 
-  >>> .el-dialog__body {
+  ::v-deep .el-dialog__body {
     padding: 0;
   }
 }
