@@ -203,6 +203,17 @@
                   冲刺三次
                 </div>
               </el-col>
+              <el-col :span="7">
+                <div
+                  :class="{
+                    submitBtnGray: detail.act1_left_time < 100,
+                    submitBtn: detail.act1_left_time >= 100,
+                  }"
+                  @click="showActivity('cc', 100)"
+                >
+                  冲刺一百次
+                </div>
+              </el-col>
             </el-row>
             <div class="margiTop20">
               <div class="themeTitle">
