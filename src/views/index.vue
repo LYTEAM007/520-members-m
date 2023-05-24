@@ -758,7 +758,7 @@
           <div class="rewardIframeTitle">恭 喜 您 获 得</div>
           <div class="rewardIframeContent">
             <p v-for="(item, index) in rewardDetail" :key="index">
-              {{ item.prize }}彩金<span v-show="item.point != 0">+1点积分</span>
+              {{ item.prize }}彩金<span v-show="item.point != 0">+{{item.point}}点积分</span>
             </p>
           </div>
         </div>
