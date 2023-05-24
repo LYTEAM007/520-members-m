@@ -364,6 +364,18 @@
                 <div>投篮三次</div>
               </div>
             </el-col>
+
+            <el-col :span="7">
+              <div
+                :class="{
+                  submitBtnGray: detail.act2_left_time < 100,
+                  submitBtn: detail.act2_left_time >= 100,
+                }"
+                @click="showActivity('tl', 100)"
+              >
+                <div>投篮一百次</div>
+              </div>
+            </el-col>
           </el-row>
           <div class="themeTitle">
             会员于5月20日至5月25日，于（体育、电竞、电子）任意平台，每累计有效投注2,888元即可获得一次投篮机会，完成投篮可获得随机彩金及随机积分。
