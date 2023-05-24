@@ -1,4 +1,6 @@
 /* eslint-disable new-cap */
+
+console.log("main")
 import Vue from 'vue'
 import { getUrlParams } from '@/common/js/util.js'
 import router from './router'
@@ -30,6 +32,7 @@ export default new Vue({
   store,
   created() {
     const username = getUrlParams().username
+    console.log(username)
     if (username) {
       sessionStorage.setItem('username', username)
       store.commit('SET_USERNAME', username)
